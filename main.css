@@ -27,7 +27,6 @@ body {
     font-size: 20px;
     color: rgb(255, 255, 255);
   }
-
   
   /* Nav Styling*/
   .nav-bar #main-name
@@ -200,13 +199,6 @@ body {
     font-size: min(15px, 3vw);
     color: white;
     text-align: center;
-    animation: fadeIn 20s forwards;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
   }
 
   .screenshot-info
@@ -331,7 +323,19 @@ body {
   {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
+
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    will-change: opacity;
   }
+
+  
+  #personal-projects .grid-container .grid-section .info-body.is-visible
+  {
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+  }
+
 
   #personal-projects .grid-container .grid-section .info-body .info-content p
   {
