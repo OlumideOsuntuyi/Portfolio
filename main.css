@@ -44,7 +44,7 @@ body {
   {
     color: rgb(109, 197, 248);
     display: inline-block;
-    background-color: rgb(143, 63, 143);
+    background-color: rgb(112, 84, 103);
 
     transition: background-color 0.5s ease, text-decoration 0.5s ease, display 0.5s ease, display ease
   }
@@ -91,6 +91,89 @@ body {
 
     padding-left: min(10px, 1vw);
   }
+
+  .main-content
+  {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: column;
+    justify-content: center;
+    margin-top: min(50px, 20vw);
+  }
+
+  .web-content-list
+  {
+    color:white;
+    width: 150px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background-color: rgba(19, 19, 19, 0.767);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: flex-start;
+    padding: 5px;
+  }
+
+  .web-content-list .item:hover
+  {
+    background-color: rgb(112, 84, 103);
+    transition: background-color 0.5s ease;
+  }
+
+  .web-content-list .item 
+  {
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.5s ease;
+  }
+
+  .web-content-list .item img
+  {
+    height: 40px;
+  }
+
+  .web-content-list .item .item-link
+  {
+    text-decoration: none;
+    text-shadow: #ccc;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .item.search-box {
+    color: white;
+    background-color: #333; /* Dark background for contrast */
+    border: 1px solid #ccc; /* Light border */
+    padding: 10px; /* Padding for better spacing */
+    border-radius: 5px; /* Rounded corners */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+  .item a:visited
+  {
+    color:white;
+  }
+
+  .web-content
+  {
+    margin-left: 160px;
+    display: flex;
+    flex-direction: column;
+  }
   
   /* about styling */
   .about-me #about
@@ -107,23 +190,20 @@ body {
   .about-me
   {
     background-color: rgb(128, 105, 31);
-
     text-align: center;
-
-    margin-top: min(50px, 20vw);
     width: 100%;
     padding-top: 1px; padding-bottom: 10px;
   }
 
   .large-screenshot:hover
   {
-    width: min(100%, 800px);
+    width: min(100%, 35vw);
     transition: width 0.5s ease;
   }
 
   .large-screenshot
   {
-    width: min(80%, 500px);
+    width: min(80%, 30vw);
     align-items: center;
     display: inline-block;
     border-style: solid;
