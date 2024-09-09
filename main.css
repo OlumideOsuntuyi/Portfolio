@@ -170,7 +170,7 @@ body {
 
   .web-content
   {
-    margin-left: 160px;
+    margin-left: 0px;
     display: flex;
     flex-direction: column;
   }
