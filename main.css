@@ -59,7 +59,7 @@ body {
     display: inline-block;
     background-color: rgba(109, 101, 106, 0.479);
 
-    transition: background-color 0.5s ease, text-decoration 0.5s ease, display 0.5s ease, display ease
+    transition: color 0.5s ease, background-color 0.5s ease, text-decoration 0.5s ease, display 0.5s ease, display ease
   }
 
   #nav-bar .sections
@@ -72,7 +72,7 @@ body {
     padding-top: 0.5em; padding-bottom: 0.5em;
     padding-left: 0.5em; padding-right: 0.5em;
     
-    transition: background-color 0.5s ease, display 0.5s ease, display ease
+    transition: color 0.5s ease, background-color 0.5s ease, display 0.5s ease, display ease
   }
 
   #nav-bar nav
@@ -151,17 +151,38 @@ body {
     background-color: rgb(21, 80, 26);
   }
 
+  .item a:visited
+  {
+    color:white;
+    transition: color 0.5s ease;
+  }
+
+  .item a:hover
+  {
+    color: inherit;
+    text-shadow: rgb(91, 186, 241);
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+  }
+
+  .item a
+  {
+    color: inherit;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+  }
+
   .web-content-list .item:hover
   {
-    font-size: 1.25em;
-    background-color: rgb(112, 84, 103);
+    font-size: 1.25em; 
+    color: rgb(91, 186, 241);
+    background-color: rgba(201, 125, 173, 0.479);
     border-top-right-radius: 1em; border-bottom-right-radius: 1em;
-    transition: background-color 0.5s ease, font-size 0.5s ease, border-radius 0.1s ease;
+    transition: color 0.5s ease, background-color 0.5s ease, font-size 0.5s ease, border-radius 0.1s ease;
   }
 
   .web-content-list .item 
   {
     font-size: 0.75em;
+    color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
     padding-left: 2em; padding-right: 0.5em;
@@ -172,7 +193,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75em;
-    transition: background-color 0.5s ease, font-size 0.5s ease, border-radius 0.5s ease;
+    transition: color 0.5s ease, background-color 0.5s ease, font-size 0.5s ease, border-radius 0.1s ease;
   }
 
   .web-content-list .item img
@@ -185,11 +206,6 @@ body {
     text-decoration: none;
     text-shadow: #ccc;
     font-weight: bolder;
-  }
-
-  .item a:visited
-  {
-    color:white;
   }
 
   .web-content
@@ -456,16 +472,24 @@ body {
     text-align:left;
   }
 
+  #sidebar-toggle:hover
+  {
+    width: max(2.5em, 40px);
+    height: max(2.5em, 40px);
+    transition: width 0.5s ease, height 0.5s ease;
+  }
+
   #sidebar-toggle
   {
     position: fixed;
     bottom: 0.5em; right: 0.5em;
-    width: 2em;
-    height: 2em;
+    width: max(2em, 30px);
+    height: max(2em, 30px);
     display: flex;
     border-radius: 0.5em;
     background-color: rgb(226, 226, 226);
     align-items: center; justify-content: center;
+    transition: width 0.5s ease, height 0.5s ease;
   }
 
   #sidebar-toggle img
