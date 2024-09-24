@@ -21,11 +21,11 @@ body {
   h1 {
     color: rgb(255, 255, 255);
     background-color: rgba(54, 52, 52);
-    margin-left: 20px;
+    margin-left: 1em;
   }
 
   p {
-    font-size: 20px;
+    font-size: 1em;
     color: rgb(255, 255, 255);
   }
   
@@ -139,6 +139,10 @@ body {
   {
     padding-left: 0.5em;
     width: 100%;
+  }
+  .web-content-list .section p
+  {
+    font-size: min(2vw, 2vh);
   }
 
   .web-content-list .title
