@@ -13,3 +13,20 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(section);
   });
 });
+
+function toggleSideBar()
+{
+  console.log('toggle');
+  const sideBar = document.getElementsByClassName('web-content-list')[0];
+  if(!sideBar.classList.contains('hidden'))
+  {
+    sideBar.classList.add('hidden');
+  }else {sideBar.classList.remove('hidden')};
+}
+
+const navBar = document.getElementById('nav-bar');
+const mainContent = document.getElementById('main-content');
+
+console.log(navBar);
+
+//mainContent.style.marginTop = navBar.style.height;
