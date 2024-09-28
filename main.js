@@ -1,3 +1,11 @@
+const navBar = document.getElementById('nav-bar');
+const mainContent = document.getElementById("main-content");
+const sideBar = document.getElementsByClassName('web-content-list')[0];
+const webContentList = mainContent.children[0].children[0];
+const webContent = mainContent.children[1];
+
+mainContent.style.marginTop = navBar.style.height;
+
 document.addEventListener("DOMContentLoaded", function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -14,19 +22,34 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-function toggleSideBar()
+window.addEventListener('resize', function() 
 {
-  console.log('toggle');
-  const sideBar = document.getElementsByClassName('web-content-list')[0];
-  if(!sideBar.classList.contains('hidden'))
+  if(sideBarVisible())
   {
-    sideBar.classList.add('hidden');
-  }else {sideBar.classList.remove('hidden')};
+    webContent.style.marginLeft = webContentList.offsetWidth + 'px';
+  }else 
+  {
+    webContent.style.marginLeft = 0;
+  }
+
+  mainContent.style.marginTop = navBar.style.height;
+});
+
+function sideBarVisible()
+{
+  return !sideBar.classList.contains('hidden')
 }
 
-const navBar = document.getElementById('nav-bar');
-const mainContent = document.getElementById('main-content');
+function toggleSideBar()
+{
+  if(sideBarVisible())
+  {
+    sideBar.classList.add('hidden');
+    webContent.style.marginLeft = 0;
+  }else 
+  {
+    sideBar.classList.remove('hidden');
+    webContent.style.marginLeft = webContentList.offsetWidth + 'px';
+  }
 
-console.log(navBar);
-
-//mainContent.style.marginTop = navBar.style.height;
+}

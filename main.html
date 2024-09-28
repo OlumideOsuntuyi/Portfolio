@@ -4,66 +4,83 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="Sheets/video.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <title>Portfolio</title>
     </head>
     
 
     <body>
-        <script src="main.js"></script>
         <div id="nav-bar">
             <a href= "#top" id="main-name" > OLUMIDE OSUNTUYI</a>
             <nav>
                 <a href="#about-section" class="sections">About</a>
                 <a href="#packages" class="sections">Professional Projects</a>
                 <a href="#personal-projects" class="sections">Personal Work</a>
-                <a href="https://olumideosuntuyi.github.io/WebChess/main.html" class="sections">Tutorials</a>
                 <a href="https://github.com/OlumideOsuntuyi" target="_blank" rel="noopener noreferrer" class="sections">Github</a>
                 <a href="#contact" class="sections">Contact Me</a>
-                <input type="text" class="sections search-box" placeholder="Search...">
+                <!-- <input type="text" class="sections search-box" placeholder="Search..."> -->
             </nav>
+            <div class="sidebar-anchor">
+                <div id="sidebar-toggle" onclick="toggleSideBar()"><img src="Images/Icons/menu.png" alt=""></div>
+            </div>
         </div>
         
         <div id="main-content">
-            <div class="web-content-list">
-                <div class="section"> <p>Web Games</p>
-                    <div class="item">
-                        <img src="Images/Icons/icons8-chess-94.png"><a href="https://olumideosuntuyi.github.io/WebChess/main.html" class="item-link">Chess Engine</a>
+            <div class="web-content-list hidden">
+                <div class="wcl-anchor">
+                    <div class="section"> <p class="title">Web Games</p>
+                        <div class="item">
+                            <img src="Images/Icons/icons8-chess-94.png"><a href="https://olumideosuntuyi.github.io/WebChess/main.html" class="item-link">Chess Engine</a>
+                        </div>
+                        <div class="item">
+                            <img src="Images/Icons/tic-tac-toe.png"><a href="https://olumideosuntuyi.github.io/TicTacToe/main.html" class="item-link">TicTacToe</a>
+                        </div>
                     </div>
-                    <div class="item">
-                        <img src="Images/Icons/tic-tac-toe.png"><a href="https://olumideosuntuyi.github.io/TicTacToe/main.html" class="item-link">TicTacToe</a>
+                    <div class="section"> <p class="title">Open Source</p>
+                        <div class="item">
+                            <a href="" class="item-link">Voxel Physics</a>
+                        </div>
+                        <div class="item">
+                            <a href="" class="item-link">Shader Library</a>
+                        </div>
                     </div>
-                </div>
-                <div class="section"> <p>Open Source</p>
-                    <div class="item">
-                        <a href="" class="item-link">Voxel Physics</a>
-                    </div>
-                    <div class="item">
-                        <a href="" class="item-link">Shader Library</a>
-                    </div>
-                </div>
-                <div class="section"> <p>Engineering</p>
-                    <div class="item">
-                        <a href="" class="item-link">Machine Design</a>
-                    </div>
-                    <div class="item">
-                        <a href="" class="item-link">IOTs</a>
-                    </div>
-                </div>
-                
+                    <div class="section"> <p class="title">Engineering</p>
+                        <div class="item">
+                            <a href="" class="item-link">Machine Design</a>
+                        </div>
+                        <div class="item">
+                            <a href="" class="item-link">IOTs</a>
+                        </div>
+                    </div></div>
             </div>
             
             <div class="web-content">
-                <div class="about-me" id="about-section">
-                    <p id="about"> <strong> OLUMIDE OSUNTUYI </strong> <br> GAME PROGRAMMER </p>
-                    <p>Olumide George Osuntuyi is a skilled game developer with a passion for creating immersive experiences through programming. 
+                <div class="video-container">
+                    <video autoplay muted loop>
+                        <source src="Videos/VoxelCraft/Bee.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="about-me">
+                    <div class="aboutName"> 
+                        <div class="myName">OLUMIDE OSUNTUYI</div> 
+                        <div class="myJob">GAME PROGRAMMER</div>
+                    </div>
+                    <div class="aboutContent">
+                        Olumide George Osuntuyi is a skilled game developer with a passion for creating immersive experiences through programming. 
                         Specializing in game development using C# and C++, he has extensive experience working with Unity and OpenGL to bring his visions to life. 
                         In addition to his game development expertise, Olumide is proficient in building .NET applications and working with shader languages, 
                         ensuring high-performance graphics and smooth gameplay. 
                         With a strong technical background and a creative mindset, he is dedicated to pushing the boundaries of interactive entertainment.
-                    </p>
+                    </div>
                 </div>
 
+                <div id="personal-projects">
+                    <div class="divisor-bar"> 
+                        <h2>Main Projects</h2>
+                        <p>Click on each tile to learn more about the project!</p>
+                    </div>
+                </div>
                 <div class="large-game-info">
                     <img src="Images/Chess/Opening Book Test.jpg" class="large-screenshot">
                     <div class="screenshot-info">
@@ -83,7 +100,7 @@
                 </div>
 
                 <div class="large-game-info">
-                    <img src="Images/Voxel Craft/Forest_Desert.jpg" class="large-screenshot">
+                    <img src="Images/Voxel Craft/Jungle_w_Volumetric.jpg" class="large-screenshot">
                     <div class="screenshot-info">
                         <p class="header"><strong>Voxel Craft</strong></p>
                         <div class="info-boxes">
@@ -254,7 +271,6 @@
                 Copyright © 2024 by Olumide Osuntuyi | All images, logos and names are used with permission
             </p>
         </div>
-        
-        <div id="sidebar-toggle" onclick="toggleSideBar()"><img src="Images/Icons/menu.png" alt=""></div>
+        <script src="main.js"></script>
     </body>
 </html>
