@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('#personal-projects .grid-container .grid-section .info-body').forEach(section => {
     observer.observe(section);
   });
+
+  
+  document.querySelectorAll('.skill-list').forEach(section => {
+    observer.observe(section);
+  });
 });
 
 window.addEventListener('resize', function() 

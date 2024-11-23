@@ -25,7 +25,8 @@
                 <div id="sidebar-toggle" onclick="toggleSideBar()"><img src="Images/Icons/menu.png" alt=""></div>
             </div>
         </div>
-        
+
+ 
         <div id="main-content">
             <div class="web-content-list hidden">
                 <div class="wcl-anchor">
@@ -75,7 +76,47 @@
                     </div>
                 </div>
 
-                <div id="personal-projects">
+                <div class="sub-section">
+                    <div class="divisor-bar"> 
+                        <h2>Skill proficiency</h2>
+                        <!-- <p>Click on each tile to learn more about the project!</p> -->
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill"> 
+                            <div class="skill-name">Unity [CSharp, Javascript]</div> 
+                            <div class="skill-bar"> 
+                                <div class="skill-level" style="width: 90%;"></div> 
+                            </div> 
+                        </div> 
+                        <div class="skill"> 
+                            <div class="skill-name">OpenGL [C++, HLSL]</div> 
+                            <div class="skill-bar"> 
+                                <div class="skill-level" style="width: 60%;"></div> 
+                            </div> 
+                        </div> 
+                        <div class="skill"> 
+                            <div class="skill-name">Python</div> 
+                            <div class="skill-bar"> 
+                                <div class="skill-level" style="width: 30%;"></div> 
+                            </div> 
+                        </div>
+                        <div class="skill"> 
+                            <div class="skill-name">PHP</div> 
+                            <div class="skill-bar"> 
+                                <div class="skill-level" style="width: 40%;"></div> 
+                            </div> 
+                        </div> 
+                        <div class="skill"> 
+                            <div class="skill-name">SQL</div> 
+                            <div class="skill-bar"> 
+                                <div class="skill-level" style="width: 30%;"></div> 
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+
+
+                <div class= "sub-section" id="personal-projects">
                     <div class="divisor-bar"> 
                         <h2>Main Projects</h2>
                         <p>Click on each tile to learn more about the project!</p>
@@ -100,7 +141,7 @@
                 </div>
 
                 <div class="large-game-info">
-                    <img src="Images/Voxel Craft/Jungle_w_Volumetric.jpg" class="large-screenshot">
+                    <img src="Images/Voxel Craft/Starry_Midnight.png" class="large-screenshot">
                     <div class="screenshot-info">
                         <p class="header"><strong>Voxel Craft</strong></p>
                         <div class="info-boxes">
@@ -132,20 +173,18 @@
                     <div class="grid-container">
                         <div class="grid-section" id="the-manager">
                             <div class="image-container">
-                                <img src="Images/The Manager/icon-2.png" alt="">
-                                <div class="image-desc">
-                                    <p>
+                                <img src="Images/The Manager/temp.jpeg" alt="">
+                            </div>
+                            <div class="info-body">
+                                <div class="info-content">
+                                    <h3>
                                         The Manager
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-boxes">
-                                <div class="info-box" id="ib-1">Unity3D</div>
-                                <div class="info-box" id="ib-2">C#</div>
-                                <div class="info-box" id="ib-3">Javascript</div>
-                            </div>
-                            <div class="info-body">
-                                <div class="info-content">
+                                    </h3>
+                                    <div class="info-boxes">
+                                        <div class="info-box" id="ib-1">Unity3D</div>
+                                        <div class="info-box" id="ib-2">C#</div>
+                                        <div class="info-box" id="ib-3">Javascript</div>
+                                    </div>
                                     <p>
                                         Dive into the immersive world of farm management with our cutting-edge game built in the Unity Game Engine. <br>
                                         Designed to provide a rich and engaging experience, 
@@ -164,81 +203,22 @@
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="grid-section" id="block-blast">
-                            <div class="image-container">
-                                <img src="Images/Block-Blast/icon.png" alt="">
-                                <div class="image-desc">
-                                    <p>
-                                        Block Blast
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-boxes">
-                                <div class="info-box" id="ib-1">2D</div>
-                                <div class="info-box" id="ib-2">C#</div>
-                                <div class="info-box" id="ib-3">Javascript</div>
-                            </div>
-                            <div class="info-body">
-                                <div class="info-content">
-                                    <p>
-                                        Dive into the immersive world of farm management with our cutting-edge game built in the Unity Game Engine. <br>
-                                        Designed to provide a rich and engaging experience, 
-                                        this game offers a blend of strategic planning, resource management, and interactive gameplay.
-                                    </p>
-                                </div>
-                                <div class="info-highlights">
-                                    <h3>Highlights:</h3>
-                                    <ul>
-                                        <li>Mobile 3D Game</li>
-                                        <li>Virtual Weather Forecast System</li>
-                                        <li>Dynamic Economy</li>
-                                        <li>Engaging Multiplayer Events</li>
-
-                                    </ul>
-                                </div>
-
+                            <div class="info-buttons">
+                                <button>
+                                    View Details
+                                </button>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"/></svg>
+                                    Visit Youtube
+                                </button>
                             </div>
                         </div>
-                        <div class="grid-section" id="fruit-blast">
-                            <div class="image-container">
-                                <img src="Images/Fruit-Blast/icon.png" alt="">
-                                <div class="image-desc">
-                                    <p>
-                                        Fruit Blast
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-boxes">
-                                <div class="info-box" id="ib-1">2D</div>
-                                <div class="info-box" id="ib-2">C#</div>
-                            </div>
-                            <div class="info-body">
-                                <div class="info-content">
-                                    <p>
-                                        Dive into the immersive world of farm management with our cutting-edge game built in the Unity Game Engine. <br>
-                                        Designed to provide a rich and engaging experience, 
-                                        this game offers a blend of strategic planning, resource management, and interactive gameplay.
-                                    </p>
-                                </div>
-                                <div class="info-highlights">
-                                    <h3>Highlights:</h3>
-                                    <ul>
-                                        <li>Mobile 3D Game</li>
-                                        <li>Virtual Weather Forecast System</li>
-                                        <li>Dynamic Economy</li>
-                                        <li>Engaging Multiplayer Events</li>
-
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        
-                        
                     </div>
                 </div>
 
+            </div>
+
+            <div id="footer">
                 <div id="contact">
                     <p class="header">
                         
@@ -262,14 +242,13 @@
                     </nav>
                     
                 </div>
-
+                <div id="copyright">
+                    <p>
+                        Copyright © 2024 by Olumide Osuntuyi | All images, logos and names are used with permission
+                    </p>
+                </div>
             </div>
-        </div>
-
-        <div id="copyright">
-            <p>
-                Copyright © 2024 by Olumide Osuntuyi | All images, logos and names are used with permission
-            </p>
+    
         </div>
         <script src="main.js"></script>
     </body>
