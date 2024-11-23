@@ -27,19 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-window.addEventListener('resize', function() 
-{
-  if(sideBarVisible())
-  {
-    webContent.style.marginLeft = webContentList.offsetWidth + 'px';
-  }else 
-  {
-    webContent.style.marginLeft = 0;
-  }
-
-  mainContent.style.marginTop = navBar.style.height;
-});
-
 function sideBarVisible()
 {
   return !sideBar.classList.contains('hidden')
@@ -50,11 +37,23 @@ function toggleSideBar()
   if(sideBarVisible())
   {
     sideBar.classList.add('hidden');
-    webContent.style.marginLeft = 0;
   }else 
   {
     sideBar.classList.remove('hidden');
-    webContent.style.marginLeft = webContentList.offsetWidth + 'px';
   }
 
 }
+
+function adjustGridContainerHeight() {
+  const gridSection = document.querySelector('.grid-section');
+  const gridContainer = document.querySelector('.grid-container');
+
+  if (gridSection && gridContainer) {
+      const sectionHeight = gridSection.offsetHeight;
+      gridContainer.style.height = `${sectionHeight}px`;
+  }
+}
+
+window.addEventListener('resize', adjustGridContainerHeight);
+adjustGridContainerHeight();
+
