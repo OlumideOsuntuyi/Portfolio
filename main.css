@@ -1,4 +1,15 @@
+:root
+{
+  --text-color: white;
+  --text-color-hover: white;
+  --background-color: rgb(15, 15, 15);
+  --background-color-2: rgb(0, 0, 0);
+  --secondary-color: rgb(53, 73, 82); 
+  --accent-color: rgba(198, 39, 230, 0.884); 
+  --clear-color: rgba(0, 0, 0, 0);
 
+  --font-size: 1vw;
+}
 
 html, body {
     margin: 0; /* Remove default margin */
@@ -14,10 +25,12 @@ html
 
 body 
 {
-  color:white;
-  background-color: rgb(27, 27, 27);
+  color: var(--text-color);
+  background-color: var(--background-color);
   font-size: max(1vw, 1vh);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  display: flex;
 }
   
   h1 {
@@ -32,38 +45,68 @@ body
 
   
   /* Nav Styling*/
+  #nav-bar
+  {
+    color: white;
+    background-color: rgba(29, 30, 41, 0.75);
+
+    display: flex;
+    flex-direction: flex-start;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+
+    padding-left: 1em;
+  }
+
+  /* Main portfolio name */
   #nav-bar #main-name
   {
     font-size: 1.5em;
-    flex: 0 0 auto;
-    width: auto-fit;
-    color: rgb(219, 233, 238);
+    flex: 0.1 0 fit-content;
+    color: var(--text-color);
     text-decoration: none;
     text-wrap: nowrap;
-    padding-right: 3em;
-  }
-  
-  .sections.search-box 
-  {
-    color: rgb(0, 0, 0);
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 0.5em;
-    width: 15em;
-    height: 1.5vw;
-    position: absolute;
-    right: 4em;
-    box-sizing: border-box;
   }
 
+  /* Contains links to sections*/
+  #nav-bar nav
+  {
+    flex: 1 0 fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Hidden in desktop*/
+  .sidebar-anchor
+  {
+    display: none;
+    flex: 0 0 auto;
+    height: auto-fit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2em; padding-right: 2em;
+  }
+
+  /* On Hover in section links 
+      -> change accent color
+      -> increase size a little
+  */
   #nav-bar .sections:hover 
   {
-    color: rgb(91, 186, 241);
+    color: var(--text-color-hover);
     display: inline-block;
-    background-color: rgba(182, 48, 133, 0.479);
-
-    transition: color 0.5s ease, background-color 0.5s ease, text-decoration 0.5s ease, display 0.5s ease, display ease
+    background-color: var(--accent-color);
+    transition: all 0.5s ease;
   }
 
   #nav-bar .sections
@@ -86,17 +129,6 @@ body
     transition: width 0.5s ease, height 0.5s ease;
   }
 
-  .sidebar-anchor
-  {
-    flex: 0 0 auto;
-    height: auto-fit;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding-left: 2em; padding-right: 2em;
-  }
-
   #sidebar-toggle
   {
     width: max(2em, 30px);
@@ -113,68 +145,42 @@ body
     width: 80%; height: 60%;
   }
 
-  #nav-bar nav
-  {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  #nav-bar
-  {
-    color: white;
-    background-color: rgba(29, 30, 41, 0.75);
-
-    display: flex;
-    flex-direction: flex-start;
-    justify-content: space-between;
-    align-items: center;
-
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-
-    padding-left: 1em;
-  }
-
   #main-content
   {
     width: 100vw;
-    position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
   }
 
   .web-content-list.hidden
   {
-    left: -10000;
-    overflow: hidden;
+    display: none;
   }
 
   .web-content-list
   {
-    color: white;
-    position: fixed;
     width: auto-fit;
     height: 100%;
-    top: 0;
-    left: 0;
     margin-top: 4vh;
     padding-top: 0.5vh;
-    z-index: 500;
     transition: all 0.3s ease;
+  }
+
+  .web-content
+  {
+    width: 100%;
+    margin-left: 0px; margin-right: 0px;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s;
   }
 
   .web-content-list .wcl-anchor
   {
+    background-color: rgb(24, 23, 27);
     position: absolute;
-    background-color: rgb(29, 30, 41, 0);
     width: auto-fit;
     height: 100%;
     left: 0;
@@ -269,18 +275,6 @@ body
     text-shadow: #ccc;
     font-weight: bolder;
   }
-
-  .web-content
-  {
-    width: 100%;
-    margin-left: 0px; margin-right: 0px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s;
-  }
   
   .aboutName .myName
   {
@@ -320,29 +314,102 @@ body
     padding-top: 0.5em; padding-bottom: 2em;
   }
 
+  .sub-section
+  {
+    background-color: var(--background-color-2);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5em;
+  }
+
+  .skill-list
+  {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+    
+  .skill 
+  {
+    flex: 1 0 max(20em, 30%);
+    margin-bottom: 0.75em;
+  }
+
+  .skill-name 
+  {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .skill-bar 
+  {
+    background-color: var(--secondary-color);
+    border-radius: 0.3em;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0.1em 0.2em 0.4em var(--background-color);
+    transition: all 0.5s ease;
+  }
+
+  .skill-level
+  {
+      height: 1.3em;
+      border-top-left-radius: 0.3em;
+      border-bottom-left-radius: 0.3em;
+      border-top-right-radius: 0.5em;
+      border-bottom-right-radius: 0.5em;
+      background-color: var(--accent-color);
+      transition: all 2s ease;
+  }
+
+  .skill-level.is-visible
+  {
+    background-color: var(--secondary-color);
+    transition: all 2s ease;
+  }
+
+  @media (max-width: 800px) {
+      .skills {
+          width: 90%; /* Adjust the width for smaller screens */
+      }
+  }
+
+
   .large-screenshot:hover
   {
-    width: min(90%, 450px);
-    transition: width 0.5s ease;
+    width: max(45%, 450px);
+    border-color: rgba(219, 219, 219, 0.568);
+    transition: all 0.5s ease;
   }
 
   .large-screenshot
   {
-    width: min(80%, 400px);
+    width: max(40%, 400px);
     align-items: center;
     display: inline-block;
     border-style: solid;
-    border-color: rgba(219, 219, 219, 0.568);
+    border-color: rgba(255, 255, 255, 0);
     border-width: 5px;
     border-radius: 10px;
-    
-    transition: width 0.5s ease;
+    padding: 10px 20px;
+    transition: all 0.5s ease;
   }
 
   .large-game-info
   {
     width: 100%;
     display: flex;
+    flex-grow: 1;
+    padding-left: 5em; padding-right: 5em;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
@@ -352,7 +419,7 @@ body
   .screenshot-info .header:hover
   {
     text-shadow: 2px 2px   rgb(128, 105, 31);
-    transition: text-shadow 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   .screenshot-info .header
@@ -361,18 +428,36 @@ body
     text-shadow: 2px 2px  rgba(22, 22, 22, 0);
     text-align: center;
     margin-bottom: 10px;
-    transition: text-shadow 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   .info-boxes
   {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
     gap: 10px;
     margin-bottom: 10px;
     width: 100%;
+  }
+  
+  .info-box
+  {
+    font-size: 10px;
+    background-color: #66120f;
+    padding-top: 0.35em; padding-bottom: 0.35em;
+    padding-left: 0.5em; padding-right: 0.5em;
+    border-radius: 0.25em;
+    text-align: center;
+
+    transition: all 0.5s ease;
+  }
+
+  .info-box:hover
+  {
+    transition: all 0.5s ease;
   }
 
   #ib-1
@@ -390,16 +475,6 @@ body
     background-color: rgb(22, 87, 16);
   }
 
-  .info-box
-  {
-    font-size: 10px;
-    background-color: #66120f;
-    padding-top: 0.35em; padding-bottom: 0.35em;
-    padding-left: 0.5em; padding-right: 0.5em;
-    border-radius: 0.25em;
-    text-align: center;
-  }
-
   .screenshot-info .body
   {
     font-size: 1em;
@@ -410,9 +485,11 @@ body
 
   .screenshot-info
   {
-    width: min(100%, 50em);
+    flex: 1 0 40%;
+
     text-align: center;
     display: flex;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -423,7 +500,9 @@ body
   .large-game-info
   {
     display: flex;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin: 50px;
   }
 
@@ -433,84 +512,94 @@ body
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   #personal-projects .divisor-bar
   {
-    color: white;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--background-color-2);
+    justify-content: center;
+    align-items: center;
+
     margin-bottom: 1.5em;
   }
 
-  #personal-projects .divisor-bar p
-  {
-    font-size: 1em;
-  }
-
-  #personal-projects .grid-container
-  {
-    padding-left: 10%; padding-right: 10%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
-  }
-
-  #personal-projects .grid-container .grid-section
+  .grid-container
   {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8em;
-  }
-
-  #personal-projects .grid-container .grid-section .image-container
-  {
-    width: 20em;
-    height: 20em;
     box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 0.8em;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    scrollbar-color: var(--clear-color);
+    
+    padding: 1em 1em;
   }
 
-  #personal-projects .grid-container .grid-section .image-container img:hover
+  .grid-container .grid-section
+  {
+    display: flex;
+    flex: 1 0 100%;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+
+    scroll-snap-align: center;
+
+    width: 100%;
+    padding: 2em;
+  }
+
+  .grid-section .image-container
+  {
+    flex: 2 0 max(200px, 30%);
+    height: 100%;
+
+    display: block;
+
+    border-style: solid;
+    border-radius: 2em;
+    border-color: var(--clear-color);
+    box-shadow: 0.1em 0.2em 0.4em var(--secondary-color);
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s ease;
+  }
+
+  .grid-section .image-container:hover
+  {
+    border-radius: 0.5em;
+    box-shadow: 0.15em 0.3em 0.6em var(--accent-color);
+  }
+
+  .image-container img
   {
     width: 100%;
-    transition: width 0.5s ease;
+    height: auto;
   }
 
-  #personal-projects .grid-container .grid-section .image-container img
-  {
-    width: 150%;
-    transition: width 0.5s ease;
-    position: absolute;
-    top: -2em;
-  }
-
-  #personal-projects .grid-container .grid-section .image-container .image-desc
-  {
-    width: 100%;
-    height: 2.5em;
-    background-color: rgba(0, 0, 0, 0.6);
-    text-align: center;
-
-    position: absolute;
-    bottom: 0;
-  }
-
-  #personal-projects .grid-container .grid-section .image-container .image-desc p
-  {
-    color: white;
-    font-size: 1.5em;
-  }
-
-  #personal-projects .grid-container .grid-section .info-boxes
+  .grid-section .info-boxes
   {
     padding-left: 0.75em; padding-right: 0.75em;
     width: 100%;
@@ -519,94 +608,144 @@ body
     justify-content: flex-start;
   }
 
-  #personal-projects .grid-container .grid-section .info-boxes .info-box
+  .info-boxes .info-box
   {
     padding: 0.5em;
   }
 
-  #personal-projects .grid-container .grid-section .info-body
+  .grid-section .info-body
   {
-    color: white;
+    height: 100%;
+    flex: 4 0 max(350px, 30%);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     opacity: 0;
-    transition: opacity 0.4s ease-out;
+    transition: all 0.5s ease;
     will-change: opacity;
   }
 
   
-  #personal-projects .grid-container .grid-section .info-body.is-visible
+  .grid-section .info-body.is-visible
   {
     opacity: 1;
-    transition: opacity 0.4s ease-in;
+    transition: all 0.5s ease;
   }
 
 
-  #personal-projects .grid-container .grid-section .info-body .info-content p
+  .info-body .info-content p
   {
     font-size: 1em;
     text-align:left;
   }
 
-  #contact .header
+  .grid-section .info-buttons
   {
-    font-size: 2em;
-    padding-top: 0.3em;
+    height: 100%;
+    flex: 1 0 max(200px, 20%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 2em; padding-right: 2em;
+    gap: 0.5em;
   }
 
-  #contact p
+  .info-buttons button
   {
-    font-size: 15px;
-  }
-
-  #contact nav a:hover
-  {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    border-color: rgb(255, 255, 255);
-    
-    transition: color 0.5s ease, background-color 0.5s, border-color 0.5s;
-  }
-
-  #contact nav a
-  {
-    font-size: 25px;
-
-    color: white;
-    
+    flex: 1 0 4em;
+    height: 2em;
+    display: block;
     border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    background-color: rgb(0, 0, 0, 0);
+
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border-radius: 0.5em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    transition: all 0.5s ease;
+  }
+
+  .info-buttons button:hover
+  {
+    flex: 2 0 4.25em;
+    background-color: var(--accent-color);
+    border-radius: 4em;
+    transition: all 1s ease;
+  }
+
+
+
+  #footer
+  {
+    background-color: var(--background-color-2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+
+    padding: 2em 0.5em;
+  }
+
+  .contact-links
+  {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-links a
+  {
+    flex: 1 0 4em;
+
+    width: 100%; 
+    height: 100%;
+
+    border-style: none;
+
+    color: var(--text-color);
+    background-color: var(--background-color);
 
     padding: 5px;
     margin-left: 5px; margin-right: 5px;
     align-items: center;
-    
-    transition: color 0.5s ease, background-color 0.5s, border-color 0.5s;
+
+    transition: all 0.5s ease;
   }
 
-  #contact nav
+  .contact-links a:hover
   {
-    padding: 20px;
-  }
+    flex: 2 0 8em;
+    background-color: var(--accent-color);
 
-  #contact
-  {
-    text-align: center;
-    padding-bottom: 30px;
-  }
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
 
+    transition: all 0.5s ease;
+  }
 
   #copyright p
   {
-    font-size: 0.75em;
+    font-size: 1em;
 
     text-align: center;
-    padding-left: 10px; padding-right: 10px;
+    padding: 1em 1em;
   }
 
   #copyright
   {
-    background-color: rgba(27, 27, 27, 0.7);
     bottom: 0;
   }
