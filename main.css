@@ -6,6 +6,7 @@
   --background-color-2: rgb(0, 0, 0);
   --secondary-color: rgb(53, 73, 82); 
   --accent-color: rgba(198, 39, 230, 0.884); 
+  --accent-color-2: rgba(39, 230, 204, 0.884); 
   --clear-color: rgba(0, 0, 0, 0);
 
   --font-size: 1vw;
@@ -28,7 +29,7 @@ body
   color: var(--text-color);
   background-color: var(--background-color);
   font-size: max(1vw, 1vh);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Consolas', 'Calibri',  Verdana, sans-serif;
 
   display: flex;
 }
@@ -346,8 +347,8 @@ body
 
   .skill-name 
   {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 0.9em;
+    margin-bottom: 0.4em;
   }
 
   .skill-bar 
@@ -363,17 +364,26 @@ body
   .skill-level
   {
       height: 1.3em;
+      width: 0%;
       border-top-left-radius: 0.3em;
       border-bottom-left-radius: 0.3em;
       border-top-right-radius: 0.5em;
       border-bottom-right-radius: 0.5em;
-      background-color: var(--accent-color);
-      transition: all 2s ease;
+      background: linear-gradient(90deg, var(--clear-color) 0%, var(--clear-color-2) 35%, var(--clear-color) 100%);
+      transition: all 0s ease;
   }
 
   .skill-level.is-visible
   {
-    background-color: var(--secondary-color);
+    width: 100%;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--accent-color-2) 35%, var(--accent-color) 90%);
+    transition: all 2s ease;
+  }
+  
+  .skill-level.is-visible:hover
+  {
+    width: 100%;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--accent-color-2) 35%, var(--accent-color) 90%);
     transition: all 2s ease;
   }
 

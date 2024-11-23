@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  document.querySelectorAll('#personal-projects .grid-container .grid-section .info-body').forEach(section => {
-    observer.observe(section);
+  var items = ['#personal-projects .grid-container .grid-section .info-body', '.skill-list', '.skill-level'];
+  items.forEach((name, index, array) => {
+
+    document.querySelectorAll(name).forEach(section => {
+      observer.observe(section);
+    });
   });
 
-  
-  document.querySelectorAll('.skill-list').forEach(section => {
-    observer.observe(section);
-  });
 });
 
 window.addEventListener('resize', function() 
