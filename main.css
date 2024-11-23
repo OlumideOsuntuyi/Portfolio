@@ -592,6 +592,32 @@ body
     scrollbar-color: var(--clear-color);
   }
 
+  /* Hide scrollbar track */
+  ::-webkit-scrollbar {
+    width: 12px; /* Adjust the width as needed */
+  }
+
+  /* Hide the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Hide the track */
+  }
+
+  /* Style the scrollbar handle (thumb) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid transparent; /* Padding around the thumb */
+    background-clip: padding-box; /* Prevent the border color from affecting the thumb */
+  }
+
+  /* Hide scrollbar track and only show handle */
+  * {
+    scrollbar-width: thin; /* Use thin scrollbar */
+    scrollbar-color: #888 transparent; /* Color of thumb and track */
+  }
+
+
+
   .grid-container .grid-section
   {
     display: flex;
@@ -787,7 +813,7 @@ body
       text-align: center;
     }
 
-    .image-container
+    .grid-section .image-container
     {
       font-size: 2em;
       height: 30vw;
@@ -795,9 +821,11 @@ body
 
       max-height: 30vw;
       max-width: 30vw;
+
+      border-radius: 0.75em;
     }
 
-    .image-container img
+    .grid-section .image-container img
     {
       height: 100%;
       width: 100%;
@@ -808,7 +836,7 @@ body
       justify-content: flex-start;
     }
     
-    .grid-section .info-body
+    .grid-container .grid-section .info-body
     {
       flex: 4 0 max(200px, 25%);
       height: fit-content;
@@ -818,13 +846,9 @@ body
       flex-wrap: wrap;
       justify-content: flex-start;
       align-items: flex-start;
-
-      opacity: 0;
-      transition: all 0.5s ease;
-      will-change: opacity;
     }
 
-    .grid-section .info-buttons
+    .grid-container .grid-section .info-buttons
     {
       width: 100%;
       flex: 1 0 max(200px, 20%);
@@ -835,10 +859,22 @@ body
       gap: 0.5em;
     }
 
-    .grid-section button
+    .grid-container .grid-section button
     {
+      height: 3em;
+      font-size: 0.75em;
+      padding: 1em 1em 1em 1em;
+    }
+
+    .grid-section p 
+    {
+      font-size: 0.75em;
+    }
+
+    .grid-section button svg
+    {
+      width: 2em;
       height: 2em;
-      padding: 0.5em 0em 0.5em 0em;
     }
   }
 
