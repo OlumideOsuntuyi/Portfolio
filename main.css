@@ -155,6 +155,11 @@ body
     align-items: center; justify-content: center;
     transition: all 0.5s ease;
   }
+  
+  #toggleSidebar:checked ~ .openSidebar
+  {
+    display: none;
+  }
 
   #main-content
   {
@@ -219,14 +224,15 @@ body
     transition: all 0.5s ease;
   }
 
-  .web-content-list .section p
+  .section .item p
   {
-    font-size: min(2vw, 2vh);
+    font-size: 0.75em;
   }
 
-  .web-content-list .title
+  .section .title
   {
     display: block;
+    font-size: 1em;
     width: 100%;
     height: fit-content;
   }
@@ -280,6 +286,24 @@ body
     text-decoration: none;
     text-shadow: #ccc;
     font-weight: bolder;
+  }
+
+  .closeSidebar
+  {
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    background-color: var(--clear-color);
+  }
+
+  .closeSidebar svg
+  {
+    height: 1.5em;
+    width: 1.5em;
   }
   
   .aboutName .myName
@@ -564,7 +588,7 @@ body
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     overflow-x: auto;
-    overflow-y: auto;
+    overflow-y: hidden;
     scrollbar-color: var(--clear-color);
   }
 
@@ -597,7 +621,7 @@ body
   .grid-section .image-container
   {
     flex: 1 0 max(200px, 30%);
-    height: 90%;
+    height: 70%;
 
     display: block;
 
@@ -765,15 +789,39 @@ body
 
     .image-container
     {
-      flex: 1 0 50%;
-      height: auto;
-      width: 100px;
+      font-size: 2em;
+      height: 30vw;
+      width: 30vw;
+
+      max-height: 30vw;
+      max-width: 30vw;
     }
 
     .image-container img
     {
       height: 100%;
       width: 100%;
+    }
+
+    .grid-container
+    {
+      justify-content: flex-start;
+    }
+    
+    .grid-section .info-body
+    {
+      flex: 4 0 max(200px, 25%);
+      height: fit-content;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      opacity: 0;
+      transition: all 0.5s ease;
+      will-change: opacity;
     }
 
     .grid-section .info-buttons
@@ -790,6 +838,7 @@ body
     .grid-section button
     {
       height: 2em;
+      padding: 0.5em 0em 0.5em 0em;
     }
   }
 

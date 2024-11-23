@@ -50,7 +50,7 @@ function adjustGridContainerHeight() {
 
   if (gridSection && gridContainer) {
       const sectionHeight = gridSection.offsetHeight;
-      gridContainer.style.height = `${sectionHeight}px`;
+      gridContainer.style.height = `${sectionHeight + 10}px`;
   }
 }
 
