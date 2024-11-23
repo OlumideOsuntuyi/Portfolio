@@ -391,6 +391,11 @@ body
       .skills {
           width: 90%; /* Adjust the width for smaller screens */
       }
+      .skill 
+      {
+        flex: 1 0 max(max(10em, 150px), 30%);
+        margin-bottom: 0.75em;
+      }
   }
 
 
