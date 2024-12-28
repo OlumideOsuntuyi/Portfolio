@@ -457,7 +457,7 @@ body
   justify-content: flex-start;
   align-items: center;
   gap: 2em;
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
   border: solid;
   border-color: var(--background-color);
   border-width: 0.5em 0em 0.2em 0em;
@@ -476,7 +476,7 @@ body
   gap: 0.5em;
 
   height: 2.5em;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
 
   box-shadow: -0.1em 0.1em 0.1em var(--background-color-2);
   transition:  all 0.5s ease;
@@ -500,7 +500,7 @@ body
   }
   .proj-list-2 .card-footer
   {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
